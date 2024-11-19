@@ -2,8 +2,18 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <section></section>
+    <div className="flex justify-center mt-12 w-full">
+      <section className="w-full flex items-center flex-col">
+        <div>
+          <h1 className="h-12 text-xl">Dashboard</h1>
+        </div>
+        <div className="grid grid-cols-2 gap-4">
+          <div className="h-80 w-96 bg-red-600">Chart 1</div>
+          <div className="h-80 w-96 bg-red-600">Chart 2</div>
+          <div className="h-80 w-96 bg-red-600">Chart 3</div>
+          <div className="h-80 w-96 bg-red-600">Chart 4</div>
+        </div>
+      </section>
     </div>
   );
 }
