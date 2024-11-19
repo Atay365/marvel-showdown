@@ -1,5 +1,6 @@
 import Image from "next/image";
 import HeroScatterPlot from "./components/HeroScatterplot";
+import HeroRadarChart from "./components/HeroRadarChart";
 
 export default function Home() {
   return (
@@ -12,7 +13,9 @@ export default function Home() {
           <div className="h-80 w-96 flex justify-center items-center border-2 border-white rounded-md">
             <HeroScatterPlot />
           </div>
-          <div className="h-80 w-96 bg-red-600">Chart 2</div>
+          <div className="h-80 w-96 bg-red-600">
+            <HeroRadarChart />
+          </div>
           <div className="h-80 w-96 bg-red-600">Chart 3</div>
           <div className="h-80 w-96 bg-red-600">Chart 4</div>
         </div>
