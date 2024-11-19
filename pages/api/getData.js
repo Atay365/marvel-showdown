@@ -28,3 +28,7 @@ export default async function handler(req, res) {
     res.status(500).json({ error: "Internal Server Error" });
   }
 }
+
+// routes
+// http://localhost:3000/api/getData?collection=stats
+// http://localhost:3000/api/getData?collection=powers
