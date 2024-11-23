@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* styles/globals.css */
+@font-face {
+  font-family: "Bangers";
+  src: url("/fonts/Bangers-Regular.woff2") format("woff2"),
+    url("/fonts/Bangers-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Apply Bangers to headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li {
+  font-family: "Bangers", sans-serif;
+}
+
+/* Apply a fallback font to body */
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -17,5 +42,4 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }

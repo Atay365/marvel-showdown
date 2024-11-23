@@ -6,22 +6,22 @@ import StatsHeatmap from "./components/StatsHeatmap";
 
 export default function Home() {
   return (
-    <div className="flex justify-center mt-12 w-full">
+    <div className="flex justify-center pt-12 w-full">
       <section className="w-full flex items-center flex-col">
         <div>
-          <h1 className="h-12 text-xl">Dashboard</h1>
+          <h1 className="h-12 text-5xl mb-4">Dashboard</h1>
         </div>
-        <div className="grid grid-cols-2 gap-4">
-          <div className="h-80 w-96 flex justify-center items-center border-2 border-white rounded-md">
+        <div className="grid grid-cols-2 gap-4 w-3/4">
+          <div className="h-80 flex justify-center items-center border-2 border-white  border-opacity-15 rounded-md bg-black bg-opacity-75">
             <HeroScatterPlot />
           </div>
-          <div className="h-80 w-96 justify-center items-center border-2 border-white rounded-md">
+          <div className="h-80 justify-center items-center border-2 border-white border-opacity-15 rounded-md bg-black bg-opacity-75">
             <HeroRadarChart />
           </div>
-          <div className="h-80 w-96 justify-center items-center border-2 border-white rounded-md">
+          <div className="h-80 justify-center items-center border-2 border-white border-opacity-15 rounded-md bg-black bg-opacity-75">
             <AlignmentBarChart />
           </div>
-          <div className="h-80 w-96 justify-center items-center border-2 border-white rounded-md">
+          <div className="h-80 justify-center items-center border-2 border-white border-opacity-15 rounded-md bg-black bg-opacity-75">
             <StatsHeatmap />
           </div>
         </div>

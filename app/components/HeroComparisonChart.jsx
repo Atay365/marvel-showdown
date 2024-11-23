@@ -152,6 +152,8 @@ const HeroComparisonPyramid = () => {
         .attr("text-anchor", "middle")
         .style("font-size", "16px")
         .style("font-weight", "bold")
+        .style("fill", "white")
+        .style("margin-top", "10%")
         .text(
           `Comparison: ${selectedHeroes[0].name} vs ${selectedHeroes[1].name}`
         );
