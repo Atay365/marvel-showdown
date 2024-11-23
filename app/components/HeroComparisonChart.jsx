@@ -167,7 +167,7 @@ const HeroComparisonPyramid = () => {
             setSelectedHeroes((prev) => [option.value, prev[1]])
           }
           placeholder="Select Hero 1"
-          className="text-black"
+          className="text-black w-1/4"
         />
         <Select
           options={heroData.map((hero) => ({ value: hero, label: hero.name }))}
@@ -175,7 +175,7 @@ const HeroComparisonPyramid = () => {
             setSelectedHeroes((prev) => [prev[0], option.value])
           }
           placeholder="Select Hero 2"
-          className="text-black"
+          className="text-black w-1/4"
         />
       </div>
       <div className="flex justify-center">

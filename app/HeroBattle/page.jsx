@@ -6,6 +6,9 @@ const page = () => {
     <div>
       <h1>Home</h1>
       <section>
+        <h3 className="text-center mb-8">
+          Pick two heros to compare, and see how they stack!
+        </h3>
         <HeroComparisonChart />
       </section>
     </div>
