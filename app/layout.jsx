@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
               <Link href="/">Dashboard</Link>
             </li>
             <li>
-              <Link href="/">Hero vs Hero</Link>
+              <Link href="/HeroBattle">Hero vs Hero</Link>
             </li>
           </ul>
         </div>

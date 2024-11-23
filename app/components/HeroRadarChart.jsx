@@ -1,7 +1,9 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
-import Select from "react-select";
+import dynamic from "next/dynamic";
+
+const Select = dynamic(() => import("react-select"), { ssr: false });
 
 const HeroRadarChart = () => {
   const svgRef = useRef();
@@ -41,11 +43,11 @@ const HeroRadarChart = () => {
       const svg = d3.select(svgRef.current);
       svg.selectAll("*").remove(); // Clear previous renders
 
-      const width = 300;
-      const height = 200;
+      const width = 200;
+      const height = 225;
       const radius = Math.min(width, height) / 2;
       const levels = 5; // Number of concentric circles
-      const margin = 50;
+      const margin = 20;
 
       // Prepare data for the selected hero
       const heroStats = [
@@ -58,6 +60,23 @@ const HeroRadarChart = () => {
       ];
 
       const maxValue = d3.max(heroStats, (d) => d.value);
+
+      // Determine the dominant stat
+      const dominantStat = heroStats.reduce((prev, current) =>
+        prev.value > current.value ? prev : current
+      ).axis;
+
+      // Map stats to colors
+      const colorMap = {
+        Intelligence: "blue",
+        Strength: "green",
+        Speed: "purple",
+        Durability: "orange",
+        Power: "red",
+        Combat: "yellow",
+      };
+
+      const radarColor = colorMap[dominantStat] || "gray"; // Fallback to gray if no match
 
       // Scale for the radius
       const radiusScale = d3
@@ -127,6 +146,7 @@ const HeroRadarChart = () => {
         )
         .attr("text-anchor", "middle")
         .style("font-size", "12px")
+        .style("fill", "white")
         .text((d) => d.axis);
 
       // Draw radar area
@@ -138,21 +158,29 @@ const HeroRadarChart = () => {
       g.append("path")
         .datum(heroStats)
         .attr("d", radarLine)
-        .attr("fill", "blue")
+        .attr("fill", radarColor)
         .attr("fill-opacity", 0.3)
-        .attr("stroke", "blue")
+        .attr("stroke", radarColor)
         .attr("stroke-width", 2);
     }
   }, [selectedHero, heroData]);
 
   return (
-    <div>
+    <div className="flex flex-col justify-center items-center mt-4">
       <div className="w-80">
-        <Select
-          options={heroData.map((hero) => ({ value: hero, label: hero.name }))}
-          onChange={(option) => setSelectedHero(option.value)}
-          placeholder="Select or Search a Hero"
-        />
+        {heroData.length > 0 ? (
+          <Select
+            options={heroData.map((hero) => ({
+              value: hero,
+              label: hero.name,
+            }))}
+            onChange={(option) => setSelectedHero(option.value)}
+            placeholder="Select or Search a Hero"
+            className="text-black"
+          />
+        ) : (
+          <p>Loading...</p> // Or any loading indicator
+        )}
       </div>
       <svg ref={svgRef}></svg>
     </div>
