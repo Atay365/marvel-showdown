@@ -129,6 +129,34 @@ const HeroComparisonPyramid = () => {
         .duration(1000)
         .attr("width", (d) => xScale(d.hero2));
 
+      // Add data labels for hero1 (left side)
+      g.selectAll(".label-hero1")
+        .data(data)
+        .enter()
+        .append("text")
+        .attr("class", "label-hero1")
+        .attr("x", (d) => width / 2 - xScale(d.hero1) - 5) // Position slightly to the left of the bar
+        .attr("y", (d) => yScale(d.stat) + yScale.bandwidth() / 2)
+        .attr("dy", "0.35em")
+        .attr("text-anchor", "end")
+        .style("fill", "white")
+        .style("font-size", "14px")
+        .text((d) => d.hero1);
+
+      // Add data labels for hero2 (right side)
+      g.selectAll(".label-hero2")
+        .data(data)
+        .enter()
+        .append("text")
+        .attr("class", "label-hero2")
+        .attr("x", (d) => width / 2 + xScale(d.hero2) + 5) // Position slightly to the right of the bar
+        .attr("y", (d) => yScale(d.stat) + yScale.bandwidth() / 2)
+        .attr("dy", "0.35em")
+        .attr("text-anchor", "start")
+        .style("fill", "white")
+        .style("font-size", "14px")
+        .text((d) => d.hero2);
+
       // Add stat labels
       g.selectAll(".stat-label")
         .data(stats)
