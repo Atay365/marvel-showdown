@@ -2,7 +2,7 @@ Marvel Showdown
 
 Marvel Showdown is an interactive superhero analytics and comparison tool that allows users to explore and compare superhero stats visually. The application features multiple interactive charts, including scatter plots, bar charts, pyramid charts, and heatmaps, to analyze and compare the powers of Marvel superheroes dynamically.
 
-![Screen Recording 2024-11-23 at 9 07 43 PM](https://github.com/user-attachments/assets/9baadcfb-0f43-4425-b763-7f82915ec2f9)
+<img src="https://github.com/user-attachments/assets/9baadcfb-0f43-4425-b763-7f82915ec2f9" alt="Marvel Showdown Demo" width="800" height="auto">
 
 Features
 	•	Hero Stats Comparison:
